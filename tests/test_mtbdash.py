@@ -13,11 +13,25 @@ def test_get_southwest_link(page: Page):
     # Click the get started link.
     page.get_by_role("link", name="South West").click()
 
-    # Expects page to have a heading with the name of Installation.
     expect(page.get_by_role("heading", name="Greatest Hits for Colorado")).to_be_visible()
 
 def test_get_colorado_chatter_link(page: Page):
     page.goto("https://www.mtbdash.com/chatter?state=colorado")
 
-    # Expects page to have a heading with the name of Installation.
     expect(page.get_by_role("button", name="Sort ASC/DESC")).to_be_visible()    
+
+def test_get_colorado_bike_reviews_link(page: Page):
+    page.goto("https://www.mtbdash.com/colorado")
+
+    expect(page.get_by_role("link", name="More Bike Reviews")).to_be_visible()  
+
+def test_get_colorado_trail_chatter_link(page: Page):
+    page.goto("https://www.mtbdash.com/colorado")
+
+    expect(page.get_by_role("link", name="Watch or Listen to more Episodes on Spotify")).to_be_visible()    
+
+def test_get_colorado_trail_associations_link(page: Page):
+    page.goto("https://www.mtbdash.com/groups?state=colorado")
+
+    expect(page.get_by_role("link", name="Donate to Colorado Trail Associations")).to_be_visible()      
+        
