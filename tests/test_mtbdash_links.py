@@ -7,10 +7,25 @@ def test_get_video_search_link(page: Page):
 
     expect(page.get_by_role("link", name="Video")).to_be_visible() 
 
+def test_get_podcast_watch_link(page: Page):
+    page.goto("https://www.mtbdash.com/podcasts")
+
+    expect(page.get_by_role("link", name="Watch").first).to_be_visible() 
+
+def test_get_podcast_all_episodes_watch_link(page: Page):
+    page.goto("https://www.mtbdash.com/all_episodes")
+
+    expect(page.get_by_role("link", name="Watch").first).to_be_visible()          
+
 def test_get_race_chatter_link(page: Page):
     page.goto("https://www.mtbdash.com/races")
 
-    expect(page.get_by_role("link", name="Link").first).to_be_visible()     
+    expect(page.get_by_role("link", name="Link").first).to_be_visible()
+
+def test_get_repair_chatter_link(page: Page):
+    page.goto("https://www.mtbdash.com/bikerepair")
+
+    expect(page.get_by_role("link", name="Link").first).to_be_visible()          
 
 def test_get_state_video_link(page: Page):
     page.goto("https://www.mtbdash.com/illinois")

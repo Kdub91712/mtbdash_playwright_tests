@@ -5,3 +5,6 @@
 
 ## Run a test file
 `bin/pytest tests/test_mtbdash_links.py`
+
+## Docs
+`https://playwright.dev/python/docs/intro`
