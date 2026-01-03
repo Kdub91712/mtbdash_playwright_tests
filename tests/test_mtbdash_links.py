@@ -131,3 +131,13 @@ def test_get_lodging_link_europe(page: Page):
     page.goto("https://www.mtbdash.com/europe?state=europe&lodging=true")
 
     expect(page.get_by_role("link", name="Find Hotels").first).to_be_visible()          
+
+def test_get_trail_detail_page(page: Page):
+    page.goto("https://www.mtbdash.com/illinois")
+    page.get_by_role("link", name="Details").first.click()
+
+    expect(page.get_by_role("link", name="Serpentine")).to_be_visible()   
+    expect(page.get_by_role("link", name="Find Trail Conditions")).to_be_visible()  
+    expect(page.get_by_role("link", name="YouTube Video")).to_be_visible()    
+    expect(page.get_by_role("link", name="TrailForks")).to_be_visible()  
+    expect(page.get_by_role("link", name="MTB Project")).to_be_visible()      

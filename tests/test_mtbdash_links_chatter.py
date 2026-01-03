@@ -54,7 +54,7 @@ def test_get_gear_chatter_link(page: Page):
 def test_get_colorado_trail_chatter_link(page: Page):
     page.goto("https://www.mtbdash.com/colorado")
 
-    expect(page.get_by_role("link", name="Watch or Listen to more Episodes on Spotify")).to_be_visible()  
+    expect(page.get_by_role("link", name="Watch or Listen to more Episodes on Spotify")).to_be_visible()          
 
 # def test_get_nearby_hiking_chatter_link(page: Page):
 #     page.goto("https://www.mtbdash.com/chatter?state=maine")    
