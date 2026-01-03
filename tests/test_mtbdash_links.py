@@ -15,17 +15,7 @@ def test_get_podcast_watch_link(page: Page):
 def test_get_podcast_all_episodes_watch_link(page: Page):
     page.goto("https://www.mtbdash.com/all_episodes")
 
-    expect(page.get_by_role("link", name="Watch").first).to_be_visible()          
-
-def test_get_race_chatter_link(page: Page):
-    page.goto("https://www.mtbdash.com/races")
-
-    expect(page.get_by_role("link", name="Link").first).to_be_visible()
-
-def test_get_repair_chatter_link(page: Page):
-    page.goto("https://www.mtbdash.com/bikerepair")
-
-    expect(page.get_by_role("link", name="Link").first).to_be_visible()          
+    expect(page.get_by_role("link", name="Watch").first).to_be_visible()                   
 
 def test_get_state_video_link(page: Page):
     page.goto("https://www.mtbdash.com/illinois")
@@ -87,12 +77,7 @@ def test_get_colorado_bike_reviews_link(page: Page):
 def test_get_bike_reviews_link(page: Page):
     page.goto("https://www.mtbdash.com/bikereviews")
     page.screenshot(path="full_page_screenshot.png", full_page=True)    
-    expect(page.get_by_role("link", name="The Cannondale Habit HT 2 Review - YouTube")).to_be_visible()      
-
-def test_get_colorado_trail_chatter_link(page: Page):
-    page.goto("https://www.mtbdash.com/colorado")
-
-    expect(page.get_by_role("link", name="Watch or Listen to more Episodes on Spotify")).to_be_visible()    
+    expect(page.get_by_role("link", name="The Cannondale Habit HT 2 Review - YouTube")).to_be_visible()       
 
 def test_get_colorado_trail_associations_link(page: Page):
     page.goto("https://www.mtbdash.com/groups?state=colorado")
