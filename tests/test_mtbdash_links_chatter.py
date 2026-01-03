@@ -30,7 +30,7 @@ def test_get_general_chatter_link(page: Page):
 def test_get_gear_chatter_link(page: Page):
     page.goto("https://www.mtbdash.com/chatter?state=gear")
 
-    expect(page.get_by_role("link", name="Link").first).to_be_visible()           
+    expect(page.get_by_role("link", name="Link").first).to_be_visible()              
 
 # def test_get_europe_conditions_link(page: Page):
 #     # todo
@@ -54,6 +54,12 @@ def test_get_gear_chatter_link(page: Page):
 def test_get_colorado_trail_chatter_link(page: Page):
     page.goto("https://www.mtbdash.com/colorado")
 
-    expect(page.get_by_role("link", name="Watch or Listen to more Episodes on Spotify")).to_be_visible()     
+    expect(page.get_by_role("link", name="Watch or Listen to more Episodes on Spotify")).to_be_visible()  
+
+# def test_get_nearby_hiking_chatter_link(page: Page):
+#     page.goto("https://www.mtbdash.com/chatter?state=maine")    
+#     page.goto("https://www.mtbdash.com/things_to_do?city=South%20Berwick&state=maine")
+#     page.screenshot(path="full_page_screenshot.png", full_page=True)
+#     expect(page.get_by_role("link", name="Women's hiking groups in southern Maine?")).to_be_visible()         
 
         

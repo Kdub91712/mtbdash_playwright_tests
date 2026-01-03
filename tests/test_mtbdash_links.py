@@ -94,4 +94,40 @@ def test_get_register_bike_link(page: Page):
 
     expect(page.get_by_role("link", name="Register your bike!")).to_be_visible() 
 
-        
+def test_get_camping_link(page: Page):
+    page.goto("https://www.mtbdash.com/maine?state=maine&camping=true")
+
+    expect(page.get_by_role("link", name="Paul Bunyan Campground")).to_be_visible()   
+
+def test_get_lodging_link(page: Page):
+    page.goto("https://www.mtbdash.com/maine?state=maine&lodging=true")
+
+    expect(page.get_by_role("link", name="Belfast Harbor Inn - Home")).to_be_visible()   
+
+def test_get_camping_link_canada(page: Page):
+    #todo: look into duplicate checking across cities
+    #todo: convert cities to dropdown     
+    page.goto("https://www.mtbdash.com/canada?state=canada&camping=true")
+
+    expect(page.get_by_role("link", name="Riverbend Campground | Canada's Alberta").first).to_be_visible()   
+
+def test_get_lodging_link_canada(page: Page):
+    #todo: look into duplicate checking across cities
+    #todo: convert cities to dropdown      
+    page.goto("https://www.mtbdash.com/canada?state=canada&lodging=true")
+
+    expect(page.get_by_role("link", name="Lucy on the Farm - Airbnb").first).to_be_visible()           
+
+def test_get_camping_link_europe(page: Page):
+    #todo: look into duplicate checking across cities
+    #todo: convert cities to dropdown     
+    page.goto("https://www.mtbdash.com/europe?state=europe&camping=true")
+
+    expect(page.get_by_role("link", name="Camping").first).to_be_visible()   
+
+def test_get_lodging_link_europe(page: Page):
+    #todo: look into duplicate checking across cities 
+    #todo: convert cities to dropdown   
+    page.goto("https://www.mtbdash.com/europe?state=europe&lodging=true")
+
+    expect(page.get_by_role("link", name="Find Hotels").first).to_be_visible()          
