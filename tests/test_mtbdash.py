@@ -29,12 +29,47 @@ def test_city_page_has_title(page: Page):
 
 
 # Check Some Links
+def test_get_state_video_link(page: Page):
+    page.goto("https://www.mtbdash.com/illinois")
+
+    expect(page.get_by_role("link", name="Video").first).to_be_visible() 
+
+def test_get_brand_groups_link(page: Page):
+    page.goto("https://www.mtbdash.com/bike_brands")
+
+    expect(page.get_by_role("link", name="Groups").first).to_be_visible() 
+
+def test_get_state_city_link(page: Page):
+    page.goto("https://www.mtbdash.com/illinois")
+
+    expect(page.get_by_role("link", name="Carpentersville")).to_be_visible() 
+
+def test_get_state_trail_system_link(page: Page):
+    page.goto("https://www.mtbdash.com/illinois")
+
+    expect(page.get_by_role("link", name="Trail System View")).to_be_visible()   
+
+def test_get_state_greatest_hits_link(page: Page):
+    page.goto("https://www.mtbdash.com/utah")
+
+    expect(page.get_by_role("link", name="Gravitron")).to_be_visible()         
+
+def test_get_brand_group_link(page: Page):
+    page.goto("https://www.mtbdash.com/bike_brand_groups?brand=Specialized")
+
+    expect(page.get_by_role("link", name="SPECIALIZED BICYCLE OWNERS GROUP")).to_be_visible() 
+
 def test_get_southwest_link(page: Page):
     page.goto("https://www.mtbdash.com/")
 
     page.get_by_role("link", name="South West").click()
 
     expect(page.get_by_role("heading", name="Greatest Hits for Colorado")).to_be_visible()
+
+def test_get_fat_bike_video_link(page: Page):
+    page.goto("https://www.mtbdash.com/fatbikes")
+
+    expect(page.get_by_role("link", name="Link").first).to_be_visible()   
 
 def test_get_colorado_bike_reviews_link(page: Page):
     page.goto("https://www.mtbdash.com/colorado")
@@ -59,7 +94,8 @@ def test_get_bike_park_video_link(page: Page):
 def test_get_register_bike_link(page: Page):
     page.goto("https://www.mtbdash.com/washington")
 
-    expect(page.get_by_role("link", name="Register your bike!")).to_be_visible()                      
+    expect(page.get_by_role("link", name="Register your bike!")).to_be_visible()    
+
 
 
 # Check Some Buttons
