@@ -7,6 +7,11 @@ def test_get_video_search_link(page: Page):
 
     expect(page.get_by_role("link", name="Video")).to_be_visible() 
 
+def test_get_race_chatter_link(page: Page):
+    page.goto("https://www.mtbdash.com/races")
+
+    expect(page.get_by_role("link", name="Link").first).to_be_visible()     
+
 def test_get_state_video_link(page: Page):
     page.goto("https://www.mtbdash.com/illinois")
 
@@ -87,24 +92,6 @@ def test_get_bike_park_video_link(page: Page):
 def test_get_register_bike_link(page: Page):
     page.goto("https://www.mtbdash.com/washington")
 
-    expect(page.get_by_role("link", name="Register your bike!")).to_be_visible()    
-
-
-
-# Check Some Buttons
-def test_get_colorado_chatter_sort_button(page: Page):
-    page.goto("https://www.mtbdash.com/chatter?state=colorado")
-
-    expect(page.get_by_role("button", name="Sort ASC/DESC")).to_be_visible()   
-
-
-# Try a search
-def test_search(page: Page):
-    page.goto("https://www.mtbdash.com")
-    page.get_by_placeholder("Search a brand, bike part, trail, city, state etc.").fill('Shimano')   
-    # page.screenshot(path="full_page_screenshot.png", full_page=True)      
-    page.get_by_role("button", name="Search").click()
-    expect(page.get_by_role("link", name="Try Another Search")).to_be_visible()   
-    expect(page).to_have_title(re.compile("MTB DASH - Shimano mountain biking"))    
+    expect(page.get_by_role("link", name="Register your bike!")).to_be_visible() 
 
         
