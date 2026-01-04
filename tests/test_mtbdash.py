@@ -17,18 +17,15 @@ def test_search(page: Page):
     expect(page.get_by_role("link", name="Try Another Search")).to_be_visible()   
     expect(page).to_have_title(re.compile("MTB DASH - Shimano mountain biking"))   
 
+# broken
 def test_get_city_trail_videos_washington(page: Page):
 
-    page.goto("https://www.mtbdash.com/chatter?state=washington")
     page.goto("https://www.mtbdash.com/washington")  
-
     page.locator('.city_select').select_option('Vancouver')
 
     # Click things to do
     expect(page.get_by_role("link", name="Trail Videos")).to_be_visible()  
     page.get_by_role("link", name="Trail Videos").click()
-
-    page.reload() 
 
     page.screenshot(path="full_page_screenshot.png", full_page=True)    
 
