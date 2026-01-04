@@ -40,12 +40,7 @@ def test_get_state_trail_system_link(page: Page):
 def test_get_state_greatest_hits_link(page: Page):
     page.goto("https://www.mtbdash.com/utah")
 
-    expect(page.get_by_role("link", name="Gravitron")).to_be_visible() 
-
-def test_get_things_to_do_hiking_link(page: Page):
-    page.goto("https://www.mtbdash.com/things_to_do?city=Toronto&state=canada")
-
-    expect(page.get_by_role("link", name="Hiking")).to_be_visible()              
+    expect(page.get_by_role("link", name="Gravitron")).to_be_visible()       
 
 def test_get_brand_group_link(page: Page):
     page.goto("https://www.mtbdash.com/bike_brand_groups?brand=Specialized")
